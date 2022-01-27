@@ -183,7 +183,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
                 createjs.Sound.play("end");
             } else {
                 //GameTimeLayer.innerHTML = createTimeText(_gameTimeNum);
-				GameTimeLayer.innerHTML = `Time:${Math.ceil(_gameTimeNum)}&#10;Score:${_gameScore}`;
+				GameTimeLayer.innerHTML = `Time:${Math.ceil(_gameTimeNum)}<br>Score:${_gameScore}`;
             }
         } else if (mode === MODE_ENDLESS) {
             GameTimeLayer.innerHTML = `CPS:${getCPS().toFixed(2)}`;
