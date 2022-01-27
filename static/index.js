@@ -418,7 +418,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
 
         if (mode === MODE_ENDLESS) {
             if (score <= 5) return 'whereis 手.pkg.tar.zst';
-            if (score <= 8) return 'git clone git@多练.com:大佬/手.git;
+            if (score <= 8) return 'git clone git@多练.com:大佬/手.git';
             if (score <= 10)  return 'pacman -Ss 如何提高底力';
             if (score <= 15) return '您';
             return '开源大法好，Arch 保平安';
