@@ -183,12 +183,12 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
                 createjs.Sound.play("end");
             } else {
                 //GameTimeLayer.innerHTML = createTimeText(_gameTimeNum);
-				GameTimeLayer.innerHTML = `TIME:${Math.ceil(_gameTimeNum)}`;
+				GameTimeLayer.innerHTML = `Time:${Math.ceil(_gameTimeNum)}`;
             }
         } else if (mode === MODE_ENDLESS) {
-            GameTimeLayer.innerHTML = `CPS:${getCPS().toFixed(2)}`;
+            GameTimeLayer.innerHTML = `CPS:${getCPS().toFixed(2)}\nScore:${_gameScore}`;
         } else {
-            GameTimeLayer.innerHTML = `SCORE:${_gameScore}`;
+            GameTimeLayer.innerHTML = `Score:${_gameScore}`;
         }
     }
 
