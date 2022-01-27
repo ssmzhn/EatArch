@@ -64,7 +64,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     }
 
     w.winOpen = function() {
-        window.open(location.href + '?r=' + /*Math.random()*/2, 'nWin', 'height=500,width=320,toolbar=no,menubar=no,scrollbars=no');
+        window.open(location.href + '?r=' + Math.random(), 'nWin', 'height=500,width=320,toolbar=no,menubar=no,scrollbars=no');
         let opened = window.open('about:blank', '_self');
         opened.opener = null;
         opened.close();
@@ -237,8 +237,8 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     let _ttreg = / t{1,2}(\d+)/,
         _clearttClsReg = / t{1,2}\d+| bad/;
 
-    function refreshGameLayer(box, loop, offset) {
-        let i = Math.floor(Math.random() * 1000) % 4 + (loop ? 0 : 4);
+    function refreshGameLayer(box, loop, offset) {//设置键型
+        let i = /*Math.floor(Math.random() * 1000) % 4 + (loop ? 0 : 4);*/ 2;
         for (let j = 0; j < box.children.length; j++) {
             let r = box.children[j],
                 rstyle = r.style;
