@@ -182,7 +182,8 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
                 GameLayerBG.className += ' flash';
                 createjs.Sound.play("end");
             } else {
-                GameTimeLayer.innerHTML = createTimeText(_gameTimeNum);
+                //GameTimeLayer.innerHTML = createTimeText(_gameTimeNum);
+				GameTimeLayer.innerHTML = `TIME:${Math.ceil(_gameTimeNum)}`;
             }
         } else if (mode === MODE_ENDLESS) {
             GameTimeLayer.innerHTML = `CPS:${getCPS().toFixed(2)}`;
