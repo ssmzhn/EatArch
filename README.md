@@ -1,22 +1,20 @@
 <p align="center">
-  <a href="https://xingye.me/game/eatkano"><img src="https://github.com/arcxingye/EatKano/blob/main/static/image/ClickBefore.png?raw=true" width="100" height="100" alt="EatKano"></a>
+  <a href="https://xingye.me/game/eatkano"><img src="https://ssmzhn.github.io/EatArch/arch.png" width="100" height="100" alt="EatArch"></a>
 </p>
 <div align="center">
 
-# EatKano
+# EatArch
 
 _🦌 网页小游戏 🥛_
 
 </div>
 
-
+原作品：[吃掉小鹿乃](https://github.com/arcxingye/EatKano)
 ## 简介
 
-小游戏：吃掉小鹿乃
+小游戏：吃掉金拱门
 
-[线上版本](https://xingye.me/game/eatkano/index.php)
-|
-[Github Page](https://arcxingye.github.io/EatKano/index.html)
+[Github Page](https://ssmzhn.github.io/EatArch/index.html)
 
 ## 可选功能
 
@@ -27,5 +25,7 @@ _🦌 网页小游戏 🥛_
 ## 其它事项
 
 点下star吧~ 欢迎修改和续写，需保留跳转此仓库的开源按钮
+
+> 原作是 [吃掉小鹿乃](https://github.com/arcxingye/EatKano) ，不要 fork 错了（
 
 如整成自己想要的吃掉xxx，可以Fork一份改下图和字，并在github pages运行
