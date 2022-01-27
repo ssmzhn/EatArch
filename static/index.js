@@ -411,17 +411,18 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         }
 
         if (mode === MODE_ENDLESS) {
-            if (score <= 5) return '试着好好练一下？';
-            if (score <= 8) return 'TCL';
-            if (score <= 10)  return 'TQL';
+            if (score <= 5) return 'whereis 手.pkg.tar.zst';
+            if (score <= 8) return 'git clone git@多练.com:大佬/手.git;
+            if (score <= 10)  return 'pacman -Ss 如何提高底力';
             if (score <= 15) return '您';
-            return '人？';
+            return '开源大法好，Arch 保平安';
         } else {
-            if (score <= 49) return '试着好好练一下？';
-            if (score <= 99) return 'TCL';
-            if (score <= 149) return 'TQL';
+            if (score <= 49) return 'whereis 手.pkg.tar.zst';
+            if (score <= 99) return 'git clone git@多练.com:大佬/手.git';
+			if (score == 114) return 'Arch 都给您撅烂力（恼';
+            if (score <= 149) return 'pacman -Ss 如何提高底力';
             if (score <= 199) return '您';
-            return '人？';
+            return '开源大法好，Arch 保平安';
         }
     }
 
