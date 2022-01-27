@@ -117,7 +117,8 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         _gameBBListIndex = 0,
         _gameOver = false,
         _gameStart = false,
-        _gameTime, _gameTimeNum, _gameScore, _date1, deviation_time;
+        _gameSettingNum=20,
+        _gameTime, _gameTimeNum, _gameScore, _date1, deviationTime;
 
     let _gameStartTime, _gameStartDatetime;
 
@@ -143,7 +144,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         _gameScore = 0;
         _gameOver = false;
         _gameStart = false;
-        _gameTimeNum = 20;
+        _gameTimeNum = _gameSettingNum;
         _gameStartTime = 0;
         _gameStartDatetime = new Date().getTime();
         countBlockSize();
@@ -209,7 +210,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     function SubmitResults() {
         let system = "其他操作系统";
         let area = "异世界";
-        if (document.getElementById("username").value) {
+        if (document.getElementById("username").value && _gameSettingNum==20) {
             if (navigator.appVersion.indexOf("Win") !== -1) system = "Windows";
             if (navigator.appVersion.indexOf("Mac") !== -1) system = "Macintosh";
             if (navigator.appVersion.indexOf("Linux") !== -1) system = "Linux";
@@ -368,6 +369,10 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         return mode === MODE_ENDLESS ? score.toFixed(2) : score.toString();
     }
 
+    function legalDeviationTime() {
+        return deviationTime < (_gameSettingNum + 3) * 1000;
+    }
+
     function showGameScoreLayer() {
         let l = document.getElementById('GameScoreLayer');
         let c = document.getElementById(_gameBBList[_gameBBListIndex - 1].id).className.match(_ttreg)[1];
@@ -376,11 +381,12 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         score = scoreToString(score);
         l.className = l.className.replace(/bgc\d/, 'bgc' + c);
         document.getElementById('GameScoreLayer-text').innerHTML = shareText(score);
-        let score_text = '得分&nbsp;&nbsp;';
-        let normalCond = deviation_time < 23000 || mode !== MODE_NORMAL;
-        score_text += normalCond ? score : "<span style='color:red;'>" + score + "</span>";
-        document.getElementById('GameScoreLayer-score').innerHTML = score_text;
-        document.getElementById('GameScoreLayer-bast').innerHTML = '最佳&nbsp;&nbsp;' + scoreToString(best);
+        let normalCond = legalDeviationTime() || mode !== MODE_NORMAL;
+        //显示CPS
+
+        document.getElementById('GameScoreLayer-CPS').innerHTML = getCPS() && mode !== MODE_ENDLESS ? 'CPS&nbsp;' + getCPS().toFixed(2) : '' //获取CPS
+        document.getElementById('GameScoreLayer-bast').innerHTML = '最佳&nbsp;' + scoreToString(best);
+        document.getElementById('GameScoreLayer-score').innerHTML = '得分&nbsp;' + (normalCond ? score : "<span style='color:red;'>" + score + "</span>");
         l.style.display = 'block';
     }
 
@@ -403,9 +409,9 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     function shareText(score) {
         if (mode === MODE_NORMAL) {
             let date2 = new Date();
-            deviation_time = (date2.getTime() - _date1.getTime())
-            if (deviation_time > 23000) {
-                return '倒计时多了' + ((deviation_time / 1000) - 20).toFixed(2) + "s";
+            deviationTime = (date2.getTime() - _date1.getTime())
+            if (!legalDeviationTime()) {
+                return '倒计时多了' + ((deviationTime / 1000) - 20).toFixed(2) + "s";
             }
             SubmitResults();
         }
@@ -469,6 +475,11 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
             map[cookie("keyboard").charAt(2).toLowerCase()] = 3;
             map[cookie("keyboard").charAt(3).toLowerCase()] = 4;
         }
+        if (cookie('gameTime') && !isNaN(cookie('gameTime'))) {
+            document.getElementById('gameTime').value=cookie('gameTime');
+            _gameSettingNum=cookie('gameTime')
+            gameRestart();
+        }
     }
 
     w.show_btn = function() {
@@ -488,6 +499,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         cookie('message', document.getElementById("message").value, 100);
         cookie('keyboard', document.getElementById("keyboard").value, 100);
         cookie('title', document.getElementById("title").value, 100);
+        cookie('gameTime', document.getElementById("gameTime").value, 100);
         initSetting();
     }
 
