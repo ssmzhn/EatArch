@@ -64,7 +64,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
     }
 
     w.winOpen = function() {
-        window.open(location.href + '?r=' + Math.random(), 'nWin', 'height=500,width=320,toolbar=no,menubar=no,scrollbars=no');
+        window.open(location.href + '?r=' + /*Math.random()*/2, 'nWin', 'height=500,width=320,toolbar=no,menubar=no,scrollbars=no');
         let opened = window.open('about:blank', '_self');
         opened.opener = null;
         opened.close();
