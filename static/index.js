@@ -238,7 +238,7 @@ const MODE_NORMAL = 1, MODE_ENDLESS = 2, MODE_PRACTICE = 3;
         _clearttClsReg = / t{1,2}\d+| bad/;
 
     function refreshGameLayer(box, loop, offset) {//设置键型
-        let i = /*Math.floor(Math.random() * 1000) % 4 + (loop ? 0 : 4);*/ 2;
+        let i = Math.floor(Math.random() * 1000) % 4 + (loop ? 0 : 4);
         for (let j = 0; j < box.children.length; j++) {
             let r = box.children[j],
                 rstyle = r.style;
