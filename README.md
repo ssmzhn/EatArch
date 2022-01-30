@@ -1,9 +1,9 @@
 <p align="center">
-  <a href="https://xingye.me/game/eatkano"><img src="https://ssmzhn.github.io/EatArch/arch.png" width="100" height="100" alt="EatArch"></a>
+  <a href="https://xingye.me/game/eatkano"><img src="https://ssmzhn.github.io/EatOneAR/onear.png" width="100" height="100" alt="EatArch"></a>
 </p>
 <div align="center">
 
-# EatArch
+# EatOneAR
 
 _🦌 网页小游戏 🥛_
 
@@ -12,9 +12,9 @@ _🦌 网页小游戏 🥛_
 原作品：[吃掉小鹿乃](https://github.com/arcxingye/EatKano)
 ## 简介
 
-小游戏：吃掉金拱门
+小游戏：吃掉One\_AR
 
-[Github Page](https://ssmzhn.github.io/EatArch/index.html)
+[Github Page](https://ssmzhn.github.io/EatOneAR/index.html)
 
 ## 可选功能
 
