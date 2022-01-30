@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://xingye.me/game/eatkano"><img src="https://ssmzhn.github.io/EatOneAR/onear.png" width="100" height="100" alt="EatArch"></a>
+  <a href="https://ssmzhn.github.io/EatArch"><img src="https://ssmzhn.github.io/EatArch/avatar.png" width="100" height="100" alt="EatOneAR"></a>
 </p>
 <div align="center">
 
@@ -14,7 +14,7 @@ _🦌 网页小游戏 🥛_
 
 小游戏：吃掉One\_AR
 
-[Github Page](https://ssmzhn.github.io/EatOneAR/index.html)
+[Github Page](https://ssmzhn.github.io/EatArch/index.html)
 
 ## 可选功能
 
