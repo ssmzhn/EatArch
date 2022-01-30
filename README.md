@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://xingye.me/game/eatkano"><img src="https://ssmzhn.github.io/EatArch/arch.png" width="100" height="100" alt="EatArch"></a>
+  <a href="https://ssmzhn.github.io/EatArch"><img src="https://ssmzhn.github.io/EatArch/avatar.png" width="100" height="100" alt="EatArch"></a>
 </p>
 <div align="center">
 
